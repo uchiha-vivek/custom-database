@@ -1,0 +1,7 @@
+{"level":"info","message":"Record created","newRecord":{"branch":"Metallurgy","firstName":"Vivek","id":1,"lastName":"Sharma"},"service":"user-service","timestamp":"2024-07-09T18:05:59.018Z"}
+{"level":"info","message":"Record created","newRecord":{"branch":"ECE","firstName":"Prit","id":2,"lastName":"Mehta"},"service":"user-service","timestamp":"2024-07-09T18:05:59.025Z"}
+{"level":"info","message":"Record created","newRecord":{"branch":"Computer-Science","firstName":"Harsh","id":3,"lastName":"Raj"},"service":"user-service","timestamp":"2024-07-09T18:05:59.025Z"}
+{"level":"info","message":"Record read","record":{"branch":"Metallurgy","firstName":"Vivek","id":1,"lastName":"Sharma"},"service":"user-service","timestamp":"2024-07-09T18:05:59.026Z"}
+{"level":"info","message":"Record updated","service":"user-service","timestamp":"2024-07-09T18:05:59.029Z","updatedRecord":{"branch":"Metallurgy","firstName":"Vivek","id":1,"lastName":"Kumar"}}
+{"level":"info","message":"All records retrieved","records":[{"branch":"Metallurgy","firstName":"Vivek","id":1,"lastName":"Kumar"},{"branch":"ECE","firstName":"Prit","id":2,"lastName":"Mehta"},{"branch":"Computer-Science","firstName":"Harsh","id":3,"lastName":"Raj"}],"service":"user-service","timestamp":"2024-07-09T18:05:59.031Z"}
+{"id":2,"level":"info","message":"Record deleted","service":"user-service","timestamp":"2024-07-09T18:05:59.035Z"}
