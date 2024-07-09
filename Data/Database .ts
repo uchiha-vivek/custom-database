@@ -3,10 +3,11 @@ import logger from './logger';
 
 type Record = { id: number; [key: string]: any };
 
+
 class Database {
   private records: Record[] = [];
   private idCounter: number = 1;
-
+  // Create Method
   create(record: Omit<Record, 'id'>): Record {
     try {
       const newRecord = { ...record, id: this.idCounter++ };
@@ -18,7 +19,7 @@ class Database {
       throw new Error('Failed to create record');
     }
   }
-
+  // Read method to read all the data and display
   read(id: number): Record | undefined {
     try {
       const record = this.records.find(record => record.id === id);
@@ -32,7 +33,7 @@ class Database {
       return undefined;
     }
   }
-
+  // Update method to update any data with the help of id
   update(id: number, updatedRecord: Partial<Omit<Record, 'id'>>): Record | undefined {
     try {
       const index = this.records.findIndex(record => record.id === id);
@@ -48,6 +49,19 @@ class Database {
     }
   }
 
+  // Method to retreive all the data/
+  getAll(): Record[] {
+    try {
+      const records = this.records;
+      logger.info('All records retrieved', { records });
+      return records;
+    } catch (error) {
+      this.handleError(error, 'Failed to get all records');
+      return [];
+    }
+  }
+
+  // Method to delete the data by id
   delete(id: number): boolean {
     try {
       const index = this.records.findIndex(record => record.id === id);
@@ -63,16 +77,7 @@ class Database {
     }
   }
 
-  getAll(): Record[] {
-    try {
-      const records = this.records;
-      logger.info('All records retrieved', { records });
-      return records;
-    } catch (error) {
-      this.handleError(error, 'Failed to get all records');
-      return [];
-    }
-  }
+ 
 
   private handleError(error: unknown, message: string): void {
     if (error instanceof Error) {
